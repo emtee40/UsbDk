@@ -12,7 +12,7 @@ jobs:
         run: |
           version=$(echo "${{ github.event.release.tag_name }}" | sed -E 's/v([0-9]+)\.0*([0-9]+)-([0-9]+)/\1.\2.\3/')
           echo "version=$version" >> $GITHUB_OUTPUT
-      - uses: vedantmgoyal2009/winget-releaser@v2
+      - uses: vedantmgoyal9/winget-releaser@main
         with:
           identifier: daynix.UsbDk
           version: ${{ steps.extract_version.outputs.version }}
